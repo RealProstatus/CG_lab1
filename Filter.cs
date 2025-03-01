@@ -37,7 +37,7 @@ namespace CG_lab1
                 }
             }
 
-                return result;
+            return result;
         }
     }
 }

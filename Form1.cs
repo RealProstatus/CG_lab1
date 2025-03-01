@@ -42,9 +42,7 @@ namespace CG_lab1
         private void инверсияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InvertFilter filter = new InvertFilter();
-            Bitmap resultImage = filter.processImage(image,backgroundWorker1);
-            pictureBox1.Image = resultImage;
-            pictureBox1.Refresh();
+            backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -57,7 +55,51 @@ namespace CG_lab1
         private void backgroundWorker1_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
         {
             progressBar1.Value = e.ProgressPercentage;
+        }
 
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (!e.Cancelled)
+            {
+                pictureBox1.Image = image;
+                pictureBox1.Refresh();
+            }
+            progressBar1.Value = 0;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            backgroundWorker1.CancelAsync();
+        }
+
+        private void размытиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new BlurFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void гауссовоРазмытиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new GaussianFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void чбToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new GrayScaleFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void сепияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new SepiaFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void яркостьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new BrightnessFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
         }
     }
 }

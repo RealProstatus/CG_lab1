@@ -12,9 +12,25 @@ namespace CG_lab1
         {
             if (horizontal)
             {
-                kernel = new float[3, 3];
-                
+                kernel = new float[,] {
+                {-1, 0, 1 },
+                { -2, 0, 2},
+                { -1, 0, 1}
+                };
             }
+            else
+            {
+                kernel = new float[,] {
+                {-1, -2, -1 },
+                { 0, 0, 0},
+                { 1, 2, 1}
+                };
+            }
+        }
+
+        public SobelFilter(bool horizontal)
+        {
+            initFilter(horizontal);
         }
     }
 }

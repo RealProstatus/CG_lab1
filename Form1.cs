@@ -101,19 +101,6 @@ namespace CG_lab1
             Filter filter = new BrightnessFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
-
-        private void горизонтальныйToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Filter filter = new SobelFilter(true);
-            backgroundWorker1.RunWorkerAsync(filter);
-        }
-
-        private void вертикальныйToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Filter filter = new SobelFilter(false);
-            backgroundWorker1.RunWorkerAsync(filter);
-        }
-
         private void резкостьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new SharpnessFilter();
@@ -129,6 +116,12 @@ namespace CG_lab1
         private void поворотToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new Rotate();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void фильтрСобеляToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new SobelFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
     }

@@ -137,5 +137,11 @@ namespace CG_lab1
             Filter filter = new WavesFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void стеклоToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new GlassFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }

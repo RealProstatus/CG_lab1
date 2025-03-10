@@ -54,6 +54,7 @@
             this.motionBlurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.резкостьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.операторЩарраToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.операторПрюиттаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -170,7 +171,8 @@
             this.тиснениеToolStripMenuItem,
             this.motionBlurToolStripMenuItem,
             this.резкостьToolStripMenuItem1,
-            this.операторЩарраToolStripMenuItem});
+            this.операторЩарраToolStripMenuItem,
+            this.операторПрюиттаToolStripMenuItem});
             this.матричныеToolStripMenuItem.Name = "матричныеToolStripMenuItem";
             this.матричныеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.матричныеToolStripMenuItem.Text = "Матричные";
@@ -270,6 +272,13 @@
             this.операторЩарраToolStripMenuItem.Text = "Оператор Щарра";
             this.операторЩарраToolStripMenuItem.Click += new System.EventHandler(this.операторЩарраToolStripMenuItem_Click);
             // 
+            // операторПрюиттаToolStripMenuItem
+            // 
+            this.операторПрюиттаToolStripMenuItem.Name = "операторПрюиттаToolStripMenuItem";
+            this.операторПрюиттаToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.операторПрюиттаToolStripMenuItem.Text = "Оператор Прюитта";
+            this.операторПрюиттаToolStripMenuItem.Click += new System.EventHandler(this.операторПрюиттаToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,6 +327,7 @@
         private System.Windows.Forms.ToolStripMenuItem motionBlurToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem резкостьToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem операторЩарраToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem операторПрюиттаToolStripMenuItem;
     }
 }
 

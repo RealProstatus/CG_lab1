@@ -143,5 +143,11 @@ namespace CG_lab1
             Filter filter = new GlassFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void motionBlurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new MotionBlurFilter(7);
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }

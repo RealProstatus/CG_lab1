@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Part7\GlassFilter.cs" />
     <Compile Include="Part7\LightEdgesFilter.cs" />
+    <Compile Include="Part7\MotionBlurFilter.cs" />
     <Compile Include="Part7\WavesFilter.cs" />
     <Compile Include="PracticFs\BlurFilter.cs" />
     <Compile Include="PracticFs\BrightnessFilter.cs" />

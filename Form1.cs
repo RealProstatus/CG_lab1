@@ -149,5 +149,17 @@ namespace CG_lab1
             Filter filter = new MotionBlurFilter(7);
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void резкостьToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Filter filter = new MoreSharpnessFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void операторЩарраToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new SharrOperator();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }

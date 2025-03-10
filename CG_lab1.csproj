@@ -49,9 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ParentClasses\BorderProcessingFilter.cs" />
     <Compile Include="Part7\GlassFilter.cs" />
     <Compile Include="Part7\LightEdgesFilter.cs" />
+    <Compile Include="Part7\MoreSharpnessFilter.cs" />
     <Compile Include="Part7\MotionBlurFilter.cs" />
+    <Compile Include="Part7\SharrOperator.cs" />
     <Compile Include="Part7\WavesFilter.cs" />
     <Compile Include="PracticFs\BlurFilter.cs" />
     <Compile Include="PracticFs\BrightnessFilter.cs" />

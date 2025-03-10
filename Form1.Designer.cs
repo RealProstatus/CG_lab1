@@ -52,6 +52,8 @@
             this.волныToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.стеклоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.motionBlurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.резкостьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.операторЩарраToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -166,7 +168,9 @@
             this.фильтрСобеляToolStripMenuItem,
             this.резкостьToolStripMenuItem,
             this.тиснениеToolStripMenuItem,
-            this.motionBlurToolStripMenuItem});
+            this.motionBlurToolStripMenuItem,
+            this.резкостьToolStripMenuItem1,
+            this.операторЩарраToolStripMenuItem});
             this.матричныеToolStripMenuItem.Name = "матричныеToolStripMenuItem";
             this.матричныеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.матричныеToolStripMenuItem.Text = "Матричные";
@@ -252,6 +256,20 @@
             this.motionBlurToolStripMenuItem.Text = "Motion blur";
             this.motionBlurToolStripMenuItem.Click += new System.EventHandler(this.motionBlurToolStripMenuItem_Click);
             // 
+            // резкостьToolStripMenuItem1
+            // 
+            this.резкостьToolStripMenuItem1.Name = "резкостьToolStripMenuItem1";
+            this.резкостьToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.резкостьToolStripMenuItem1.Text = "++Резкость";
+            this.резкостьToolStripMenuItem1.Click += new System.EventHandler(this.резкостьToolStripMenuItem1_Click);
+            // 
+            // операторЩарраToolStripMenuItem
+            // 
+            this.операторЩарраToolStripMenuItem.Name = "операторЩарраToolStripMenuItem";
+            this.операторЩарраToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.операторЩарраToolStripMenuItem.Text = "Оператор Щарра";
+            this.операторЩарраToolStripMenuItem.Click += new System.EventHandler(this.операторЩарраToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,6 +316,8 @@
         private System.Windows.Forms.ToolStripMenuItem волныToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem стеклоToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem motionBlurToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem резкостьToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem операторЩарраToolStripMenuItem;
     }
 }
 

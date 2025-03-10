@@ -124,5 +124,11 @@ namespace CG_lab1
             Filter filter = new SobelFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
+
+        private void тиснениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new EmbossingFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }

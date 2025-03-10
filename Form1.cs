@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.ComponentModel;
+using CG_lab1.Part7;
 
 namespace CG_lab1
 {
@@ -128,6 +129,12 @@ namespace CG_lab1
         private void тиснениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new EmbossingFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void волныToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new WavesFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
     }

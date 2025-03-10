@@ -21,8 +21,9 @@ namespace CG_lab1
 
         protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
         {
+            //применяем ядро
             Color clr = base.calculateNewPixelColor(sourceImage, x, y);
-
+            //увел. яркость + нормировка
             int res = clamp(clr.R + 100);
 
             return Color.FromArgb(res, res, res);        

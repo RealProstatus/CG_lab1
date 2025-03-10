@@ -49,6 +49,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.button1 = new System.Windows.Forms.Button();
             this.тиснениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.волныToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -106,7 +107,8 @@
             this.сепияToolStripMenuItem,
             this.яркостьToolStripMenuItem,
             this.переносToolStripMenuItem,
-            this.поворотToolStripMenuItem});
+            this.поворотToolStripMenuItem,
+            this.волныToolStripMenuItem});
             this.точечныеToolStripMenuItem.Name = "точечныеToolStripMenuItem";
             this.точечныеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.точечныеToolStripMenuItem.Text = "Точечные";
@@ -225,6 +227,13 @@
             this.тиснениеToolStripMenuItem.Text = "Тиснение";
             this.тиснениеToolStripMenuItem.Click += new System.EventHandler(this.тиснениеToolStripMenuItem_Click);
             // 
+            // волныToolStripMenuItem
+            // 
+            this.волныToolStripMenuItem.Name = "волныToolStripMenuItem";
+            this.волныToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.волныToolStripMenuItem.Text = "Волны";
+            this.волныToolStripMenuItem.Click += new System.EventHandler(this.волныToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,6 +277,7 @@
         private System.Windows.Forms.ToolStripMenuItem переносToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem поворотToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem тиснениеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem волныToolStripMenuItem;
     }
 }
 

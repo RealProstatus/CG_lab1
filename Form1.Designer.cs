@@ -40,21 +40,22 @@
             this.яркостьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.переносToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.поворотToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.волныToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.стеклоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.матричныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.размытиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.гауссовоРазмытиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.фильтрСобеляToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.резкостьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.button1 = new System.Windows.Forms.Button();
             this.тиснениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.волныToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.стеклоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.motionBlurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.резкостьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.операторЩарраToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.операторПрюиттаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.button1 = new System.Windows.Forms.Button();
+            this.светящиесяКраяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -161,6 +162,20 @@
             this.поворотToolStripMenuItem.Text = "Поворот";
             this.поворотToolStripMenuItem.Click += new System.EventHandler(this.поворотToolStripMenuItem_Click);
             // 
+            // волныToolStripMenuItem
+            // 
+            this.волныToolStripMenuItem.Name = "волныToolStripMenuItem";
+            this.волныToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.волныToolStripMenuItem.Text = "Волны";
+            this.волныToolStripMenuItem.Click += new System.EventHandler(this.волныToolStripMenuItem_Click);
+            // 
+            // стеклоToolStripMenuItem
+            // 
+            this.стеклоToolStripMenuItem.Name = "стеклоToolStripMenuItem";
+            this.стеклоToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.стеклоToolStripMenuItem.Text = "Стекло";
+            this.стеклоToolStripMenuItem.Click += new System.EventHandler(this.стеклоToolStripMenuItem_Click);
+            // 
             // матричныеToolStripMenuItem
             // 
             this.матричныеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -172,7 +187,8 @@
             this.motionBlurToolStripMenuItem,
             this.резкостьToolStripMenuItem1,
             this.операторЩарраToolStripMenuItem,
-            this.операторПрюиттаToolStripMenuItem});
+            this.операторПрюиттаToolStripMenuItem,
+            this.светящиесяКраяToolStripMenuItem});
             this.матричныеToolStripMenuItem.Name = "матричныеToolStripMenuItem";
             this.матричныеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.матричныеToolStripMenuItem.Text = "Матричные";
@@ -205,51 +221,12 @@
             this.резкостьToolStripMenuItem.Text = "+Резкость";
             this.резкостьToolStripMenuItem.Click += new System.EventHandler(this.резкостьToolStripMenuItem_Click);
             // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.WorkerReportsProgress = true;
-            this.backgroundWorker1.WorkerSupportsCancellation = true;
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
-            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(13, 471);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(342, 23);
-            this.progressBar1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(362, 471);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Отмена";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // тиснениеToolStripMenuItem
             // 
             this.тиснениеToolStripMenuItem.Name = "тиснениеToolStripMenuItem";
             this.тиснениеToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.тиснениеToolStripMenuItem.Text = "Тиснение";
             this.тиснениеToolStripMenuItem.Click += new System.EventHandler(this.тиснениеToolStripMenuItem_Click);
-            // 
-            // волныToolStripMenuItem
-            // 
-            this.волныToolStripMenuItem.Name = "волныToolStripMenuItem";
-            this.волныToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.волныToolStripMenuItem.Text = "Волны";
-            this.волныToolStripMenuItem.Click += new System.EventHandler(this.волныToolStripMenuItem_Click);
-            // 
-            // стеклоToolStripMenuItem
-            // 
-            this.стеклоToolStripMenuItem.Name = "стеклоToolStripMenuItem";
-            this.стеклоToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.стеклоToolStripMenuItem.Text = "Стекло";
-            this.стеклоToolStripMenuItem.Click += new System.EventHandler(this.стеклоToolStripMenuItem_Click);
             // 
             // motionBlurToolStripMenuItem
             // 
@@ -278,6 +255,38 @@
             this.операторПрюиттаToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.операторПрюиттаToolStripMenuItem.Text = "Оператор Прюитта";
             this.операторПрюиттаToolStripMenuItem.Click += new System.EventHandler(this.операторПрюиттаToolStripMenuItem_Click);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(13, 471);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(342, 23);
+            this.progressBar1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(362, 471);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Отмена";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // светящиесяКраяToolStripMenuItem
+            // 
+            this.светящиесяКраяToolStripMenuItem.Name = "светящиесяКраяToolStripMenuItem";
+            this.светящиесяКраяToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.светящиесяКраяToolStripMenuItem.Text = "Светящиеся края";
+            this.светящиесяКраяToolStripMenuItem.Click += new System.EventHandler(this.светящиесяКраяToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -328,6 +337,7 @@
         private System.Windows.Forms.ToolStripMenuItem резкостьToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem операторЩарраToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem операторПрюиттаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem светящиесяКраяToolStripMenuItem;
     }
 }
 

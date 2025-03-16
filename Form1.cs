@@ -16,10 +16,12 @@ namespace CG_lab1
     public partial class Form1 : Form
     {
 
-        Bitmap image;
+        private Bitmap image;
+        private Stack<Bitmap> historyStack;
 
         public Form1()
         {
+            historyStack = new Stack<Bitmap>();
             InitializeComponent();
         }
 
@@ -35,17 +37,43 @@ namespace CG_lab1
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 image = new Bitmap(dialog.FileName);
+                historyStack.Push(image);
 
                 pictureBox1.Image = image;
                 pictureBox1.Refresh();
             }
 
         }
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (image == null) return;
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Сохранить изображение";
+            saveFileDialog.Filter = "Image files | *.png; *.jpg; *.bmp; | All Files (*.*) | *.*";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string extension = Path.GetExtension(saveFileDialog.FileName).ToLower();
+                ImageFormat format = ImageFormat.Png;
+
+                switch (extension)
+                {
+                    case ".bmp":
+                        format = ImageFormat.Bmp; break;
+                    case ".jpg":
+                    case ".jpeg":
+                        format = ImageFormat.Jpeg; break;
+                }
+
+                image.Save(saveFileDialog.FileName, format);
+            }
+        }
 
         private void инверсияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InvertFilter filter = new InvertFilter();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -78,127 +106,120 @@ namespace CG_lab1
         private void размытиеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new BlurFilter();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void гауссовоРазмытиеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new GaussianFilter();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void чбToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new GrayScaleFilter();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void сепияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new SepiaFilter();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void яркостьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new BrightnessFilter();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
         private void резкостьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new SharpnessFilter();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void переносToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new Transfer();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void поворотToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new Rotate();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void фильтрСобеляToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new SobelFilter();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void тиснениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new EmbossingFilter();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void волныToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new WavesFilter();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void стеклоToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new GlassFilter();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void motionBlurToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new MotionBlurFilter(7);
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void резкостьToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Filter filter = new MoreSharpnessFilter();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void операторЩарраToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new SharrOperator();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void операторПрюиттаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new PrewittOperator();
-            backgroundWorker1.RunWorkerAsync(filter);
+            applyFilter(filter);
         }
 
         private void светящиесяКраяToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filter filter = new LightEdgesFilter();
+            applyFilter(filter);
+        }
+
+        private void applyFilter(Filter filter)
+        {
+            if (image == null || filter == null) return;
+
+            historyStack.Push(new Bitmap(image));
+
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
-        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            if (image == null) return;
-
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Title = "Сохранить изображение";
-            saveFileDialog.Filter = "Image files | *.png; *.jpg; *.bmp; | All Files (*.*) | *.*";
-
-            if(saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (historyStack.Count() > 0)
             {
-                string extension = Path.GetExtension(saveFileDialog.FileName).ToLower();
-                ImageFormat format = ImageFormat.Png;
-
-                switch (extension)
-                {
-                    case ".bmp":
-                        format = ImageFormat.Bmp; break;
-                    case ".jpg":
-                    case ".jpeg":
-                        format= ImageFormat.Jpeg; break;
-                }
-
-                image.Save(saveFileDialog.FileName, format);
+                image = historyStack.Pop();
+                pictureBox1.Image = image;
+                pictureBox1.Refresh();
             }
         }
     }

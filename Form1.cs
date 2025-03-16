@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.ComponentModel;
 using CG_lab1.Part7;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace CG_lab1
 {
@@ -172,6 +174,32 @@ namespace CG_lab1
         {
             Filter filter = new LightEdgesFilter();
             backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (image == null) return;
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Сохранить изображение";
+            saveFileDialog.Filter = "Image files | *.png; *.jpg; *.bmp; | All Files (*.*) | *.*";
+
+            if(saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string extension = Path.GetExtension(saveFileDialog.FileName).ToLower();
+                ImageFormat format = ImageFormat.Png;
+
+                switch (extension)
+                {
+                    case ".bmp":
+                        format = ImageFormat.Bmp; break;
+                    case ".jpg":
+                    case ".jpeg":
+                        format= ImageFormat.Jpeg; break;
+                }
+
+                image.Save(saveFileDialog.FileName, format);
+            }
         }
     }
 }

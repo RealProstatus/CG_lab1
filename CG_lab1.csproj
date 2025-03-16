@@ -50,16 +50,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ParentClasses\BorderProcessingFilter.cs" />
-    <Compile Include="Part7\GlassFilter.cs" />
-    <Compile Include="Part7\LightEdgesFilter.cs" />
-    <Compile Include="Part7\MoreSharpnessFilter.cs" />
-    <Compile Include="Part7\MotionBlurFilter.cs" />
-    <Compile Include="Part7\PrewittOperator.cs" />
-    <Compile Include="Part7\SharrOperator.cs" />
-    <Compile Include="Part7\WavesFilter.cs" />
+    <Compile Include="Part8\GlassFilter.cs" />
+    <Compile Include="Part8\LightEdgesFilter.cs" />
+    <Compile Include="Part8\MoreSharpnessFilter.cs" />
+    <Compile Include="Part8\MotionBlurFilter.cs" />
+    <Compile Include="Part8\PrewittOperator.cs" />
+    <Compile Include="Part8\SharrOperator.cs" />
+    <Compile Include="Part8\WavesFilter.cs" />
     <Compile Include="PracticFs\BlurFilter.cs" />
     <Compile Include="PracticFs\BrightnessFilter.cs" />
-    <Compile Include="Part7\EmbossingFilter.cs" />
+    <Compile Include="Part8\EmbossingFilter.cs" />
     <Compile Include="ParentClasses\Filter.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -73,11 +73,11 @@
     <Compile Include="ParentClasses\MatrixFilter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Part7\Rotate.cs" />
+    <Compile Include="Part8\Rotate.cs" />
     <Compile Include="PracticFs\SepiaFilter.cs" />
     <Compile Include="PracticFs\SharpnessFilter.cs" />
     <Compile Include="PracticFs\SobelFilter.cs" />
-    <Compile Include="Part7\Transfer.cs" />
+    <Compile Include="Part8\Transfer.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

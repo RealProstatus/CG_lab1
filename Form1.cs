@@ -236,7 +236,7 @@ namespace CG_lab1
 
         private void эрозияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            applyFilter(new Erosion(null));
+            applyFilter(new Erosion());
         }
     }
 }

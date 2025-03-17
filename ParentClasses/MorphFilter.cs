@@ -35,13 +35,14 @@ namespace CG_lab1.ParentClasses
     public abstract class MorphFilter : Filter
     {
         protected bool[,] kernel;
-        protected int kernelSize;
+        //если true - то точка активная
+        protected int kernelWidth, kernelHeight;
 
         public MorphFilter(bool[,] kernel = null)
         {
             if(kernel == null)
             {
-                kernel = new bool[,]
+                this.kernel = new bool[,]
                 {
                     {true, true, true },
                     {true, true, true },
@@ -52,7 +53,8 @@ namespace CG_lab1.ParentClasses
             {
                 this.kernel = kernel;
             }
-            kernelSize = kernel.GetLength(0);
+            kernelWidth = this.kernel.GetLength(0);
+            kernelHeight = this.kernel.GetLength(1);
         }
 
         protected abstract bool applyOperation(List<bool> neighbours);

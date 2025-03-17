@@ -49,7 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Morphology\BlackHat.cs" />
+    <Compile Include="Morphology\Closing.cs" />
     <Compile Include="Morphology\Dilation.cs" />
+    <Compile Include="Morphology\Grad.cs" />
+    <Compile Include="Morphology\Opening.cs" />
+    <Compile Include="Morphology\TopHat.cs" />
     <Compile Include="ParentClasses\BorderProcessingFilter.cs" />
     <Compile Include="ParentClasses\MorphFilter.cs" />
     <Compile Include="Morphology\Erosion.cs" />

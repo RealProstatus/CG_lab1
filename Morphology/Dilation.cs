@@ -30,13 +30,13 @@ namespace CG_lab1.Morphology
 
             for(int dy = stDy; dy<=endDy; dy++)
             {
-                for(int dx = endDx; dx<=endDx; dx++)
+                for(int dx = stDx; dx<=endDx; dx++)
                 {
                     int idX = clamp(x + dx, 0, source.Width - 1);
                     int idY = clamp(y + dy, 0, source.Height - 1);
 
                     // при dx = startDx получаем 0, при dx = endDx — kernelWidth - 1
-                    if (kernel[dx - stDx, dy - stDx])
+                    if (kernel[dx - stDx, dy - stDy])
                         neighbours.Add(source.GetPixel(idX, idY));
                 }
             }

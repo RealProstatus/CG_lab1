@@ -231,5 +231,25 @@ namespace CG_lab1
         {
             applyFilter(new Closing());
         }
+
+        private void открытиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            applyFilter(new Opening());
+        }
+
+        private void gradToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            applyFilter(new Grad());
+        }
+
+        private void topHatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            applyFilter(new TopHat());
+        }
+
+        private void blackHatToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            applyFilter(new BlackHat());
+        }
     }
 }

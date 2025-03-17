@@ -20,9 +20,9 @@ namespace CG_lab1.ParentClasses
                     Color px1 = img1.GetPixel(x, y);
                     Color px2 = img2.GetPixel(x, y);
 
-                    int r = Math.Min(px1.R - px2.R,0);
-                    int g = Math.Min(px1.G - px2.G, 0);
-                    int b = Math.Min(px1.B - px2.B, 0);
+                    int r = Math.Max(px1.R - px2.R, 0);
+                    int g = Math.Max(px1.G - px2.G, 0);
+                    int b = Math.Max(px1.B - px2.B, 0);
 
                     res.SetPixel(x, y, Color.FromArgb(r, g, b));
                 }

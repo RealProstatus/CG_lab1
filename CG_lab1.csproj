@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="ParentClasses\BorderProcessingFilter.cs" />
     <Compile Include="ParentClasses\MorphFilter.cs" />
+    <Compile Include="Part10\GrayWorldFilter.cs" />
     <Compile Include="Part10\MaxFilter.cs" />
     <Compile Include="Part10\MedianFilter.cs" />
     <Compile Include="Part8\GlassFilter.cs" />

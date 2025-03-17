@@ -60,6 +60,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.медианныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.максимумToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.медианныйToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.максимумToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -203,7 +205,9 @@
             this.резкостьToolStripMenuItem1,
             this.операторЩарраToolStripMenuItem,
             this.операторПрюиттаToolStripMenuItem,
-            this.светящиесяКраяToolStripMenuItem});
+            this.светящиесяКраяToolStripMenuItem,
+            this.медианныйToolStripMenuItem1,
+            this.максимумToolStripMenuItem1});
             this.матричныеToolStripMenuItem.Name = "матричныеToolStripMenuItem";
             this.матричныеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.матричныеToolStripMenuItem.Text = "Матричные";
@@ -317,19 +321,19 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // медианныйToolStripMenuItem
+            // медианныйToolStripMenuItem1
             // 
-            this.медианныйToolStripMenuItem.Name = "медианныйToolStripMenuItem";
-            this.медианныйToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.медианныйToolStripMenuItem.Text = "Медианный";
-            this.медианныйToolStripMenuItem.Click += new System.EventHandler(this.медианныйToolStripMenuItem_Click);
+            this.медианныйToolStripMenuItem1.Name = "медианныйToolStripMenuItem1";
+            this.медианныйToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.медианныйToolStripMenuItem1.Text = "Медианный";
+            this.медианныйToolStripMenuItem1.Click += new System.EventHandler(this.медианныйToolStripMenuItem1_Click);
             // 
-            // максимумToolStripMenuItem
+            // максимумToolStripMenuItem1
             // 
-            this.максимумToolStripMenuItem.Name = "максимумToolStripMenuItem";
-            this.максимумToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.максимумToolStripMenuItem.Text = "Максимум";
-            this.максимумToolStripMenuItem.Click += new System.EventHandler(this.максимумToolStripMenuItem_Click);
+            this.максимумToolStripMenuItem1.Name = "максимумToolStripMenuItem1";
+            this.максимумToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.максимумToolStripMenuItem1.Text = "Максимум";
+            this.максимумToolStripMenuItem1.Click += new System.EventHandler(this.максимумToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -386,6 +390,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolStripMenuItem медианныйToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem максимумToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem медианныйToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem максимумToolStripMenuItem1;
     }
 }
 

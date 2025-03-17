@@ -233,5 +233,10 @@ namespace CG_lab1
         {
             applyFilter(new MaxFilter());
         }
+
+        private void эрозияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            applyFilter(new Erosion(null));
+        }
     }
 }

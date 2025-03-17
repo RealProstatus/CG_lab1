@@ -55,6 +55,8 @@ namespace CG_lab1.ParentClasses
             kernelSize = kernel.GetLength(0);
         }
 
+        protected abstract bool applyOperation(List<bool> neighbours);
+
         public void setKernel(bool[,] kernel)
         {
             this.kernel = kernel;

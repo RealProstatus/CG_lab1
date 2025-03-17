@@ -8,43 +8,36 @@ using System.Threading.Tasks;
 
 namespace CG_lab1.Part10
 {
-    internal class GrayWorldFilter : Filter
+    internal class ColorCorrectionFilter : Filter
     {
+        private Color reference;
+        private Color goal;
+
+        public ColorCorrectionFilter(Color reference, Color goal)
+        {
+            this.reference = reference;
+            this.goal = goal;
+        }
+
         public override Bitmap processImage(Bitmap source, BackgroundWorker worker)
-        { 
+        {
+            //коэффициенты для каждого канала
+            double scaleR = (reference.R == 0) ? 1.0 : (double)goal.R / reference.R;
+            double scaleG = (reference.G == 0) ? 1.0 : (double)goal.G / reference.G;
+            double scaleB = (reference.B == 0) ? 1.0 : (double)goal.B / reference.B;
+
             int width = source.Width;
             int height = source.Height;
-            long sumR = 0, sumG = 0, sumB = 0;
-            int totalPixels = width * height;
-
             Bitmap result = new Bitmap(width, height);
 
-            //находим суммарное значение каждого канала
             for (int y = 0; y < height; y++)
             {
                 for (int x = 0; x < width; x++)
                 {
                     Color c = source.GetPixel(x, y);
-                    sumR += c.R;
-                    sumG += c.G;
-                    sumB += c.B;
-                }
-            }
-            //находим средние значения
-            float avgR = sumR / (float)totalPixels;
-            float avgG = sumG / (float)totalPixels;
-            float avgB = sumB / (float)totalPixels;
-            float avg = (float)((avgB + avgG + avgR) / 3.0);
-
-            //масштабируем каждый канал исходного пикселя
-            for (int y = 0; y < height; y++)
-            {
-                for (int x = 0; x < width; x++)
-                {
-                    Color c = source.GetPixel(x, y);
-                    int r = (int)(c.R * avg / avgR);
-                    int g = (int)(c.G * avg / avgG);
-                    int b = (int)(c.B * avg / avgB);
+                    int r = (int)(c.R * scaleR);
+                    int g = (int)(c.G * scaleG);
+                    int b = (int)(c.B * scaleB);
 
                     r = clamp(r);
                     g = clamp(g);
@@ -52,7 +45,6 @@ namespace CG_lab1.Part10
 
                     result.SetPixel(x, y, Color.FromArgb(r, g, b));
                 }
-
                 int progress = (int)((float)y / height * 100);
                 worker.ReportProgress(progress);
             }

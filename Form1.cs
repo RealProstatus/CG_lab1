@@ -251,5 +251,28 @@ namespace CG_lab1
         {
             applyFilter(new BlackHat());
         }
+
+        private void серыйМирToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            applyFilter(new GrayWorldFilter());
+        }
+
+        private void идеальныйОтражательToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            applyFilter(new IdealReflector());
+        }
+
+        private void коррекцияСОпорнымЦветомToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            Color referebce = Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255));
+            Color trgt = Color.FromArgb(rnd.Next(255), rnd.Next(255), rnd.Next(255));
+            applyFilter(new ColorCorrectionFilter(referebce, trgt));
+        }
+
+        private void линейноеРастяжениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            applyFilter(new LinearStretch());
+        }
     }
 }

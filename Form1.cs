@@ -10,6 +10,7 @@ using System.ComponentModel;
 using CG_lab1.Part7;
 using System.IO;
 using System.Drawing.Imaging;
+using CG_lab1.Part10;
 
 namespace CG_lab1
 {
@@ -221,6 +222,17 @@ namespace CG_lab1
                 pictureBox1.Image = image;
                 pictureBox1.Refresh();
             }
+        }
+
+        private void медианныйToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filter filter = new MedianFilter();
+            applyFilter(filter);
+        }
+
+        private void максимумToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            applyFilter(new MaxFilter());
         }
     }
 }

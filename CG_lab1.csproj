@@ -49,9 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Morphology\Dilation.cs" />
     <Compile Include="ParentClasses\BorderProcessingFilter.cs" />
     <Compile Include="ParentClasses\MorphFilter.cs" />
-    <Compile Include="Part10\Erosion.cs" />
+    <Compile Include="Morphology\Erosion.cs" />
     <Compile Include="Part10\GrayWorldFilter.cs" />
     <Compile Include="Part10\MaxFilter.cs" />
     <Compile Include="Part10\MedianFilter.cs" />

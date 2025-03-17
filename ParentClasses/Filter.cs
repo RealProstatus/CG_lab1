@@ -22,7 +22,7 @@ namespace CG_lab1
 
         protected abstract Color calculateNewPixelColor(Bitmap source, int x, int y);
 
-        public Bitmap processImage(Bitmap source, BackgroundWorker worker) 
+        public virtual Bitmap processImage(Bitmap source, BackgroundWorker worker) 
         {
             Bitmap result = new Bitmap(source.Width, source.Height);
 

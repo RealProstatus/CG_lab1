@@ -12,6 +12,7 @@ using System.IO;
 using System.Drawing.Imaging;
 using CG_lab1.Part10;
 using static System.Net.WebRequestMethods;
+using CG_lab1.Morphology;
 
 namespace CG_lab1
 {
@@ -74,8 +75,7 @@ namespace CG_lab1
 
         private void инверсияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InvertFilter filter = new InvertFilter();
-            applyFilter(filter);
+            applyFilter(new InvertFilter());
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -107,103 +107,86 @@ namespace CG_lab1
 
         private void размытиеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new BlurFilter();
-            applyFilter(filter);
+            applyFilter(new BlurFilter());
         }
 
         private void гауссовоРазмытиеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new GaussianFilter();
-            applyFilter(filter);
+            applyFilter(new GaussianFilter());
         }
 
         private void чбToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new GrayScaleFilter();
-            applyFilter(filter);
+            applyFilter(new GrayScaleFilter());
         }
 
         private void сепияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new SepiaFilter();
-            applyFilter(filter);
+            applyFilter(new SepiaFilter());
         }
 
         private void яркостьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new BrightnessFilter();
-            applyFilter(filter);
+            applyFilter(new BrightnessFilter());
         }
         private void резкостьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new SharpnessFilter();
-            applyFilter(filter);
+            applyFilter(new SharpnessFilter());
         }
 
         private void переносToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new Transfer();
-            applyFilter(filter);
+            applyFilter(new Transfer());
         }
 
         private void поворотToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new Rotate();
-            applyFilter(filter);
+            applyFilter(new Rotate());
         }
 
         private void фильтрСобеляToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new SobelFilter();
-            applyFilter(filter);
+            applyFilter(new SobelFilter());
         }
 
         private void тиснениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new EmbossingFilter();
-            applyFilter(filter);
+            applyFilter(new EmbossingFilter());
         }
 
         private void волныToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new WavesFilter();
-            applyFilter(filter);
+            applyFilter(new WavesFilter());
         }
 
         private void стеклоToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new GlassFilter();
-            applyFilter(filter);
+            applyFilter(new GlassFilter());
         }
 
         private void motionBlurToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new MotionBlurFilter(7);
-            applyFilter(filter);
+            applyFilter(new MotionBlurFilter(7));
         }
 
         private void резкостьToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Filter filter = new MoreSharpnessFilter();
-            applyFilter(filter);
+            applyFilter(new MoreSharpnessFilter());
         }
 
         private void операторЩарраToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new SharrOperator();
-            applyFilter(filter);
+            applyFilter(new SharrOperator());
         }
 
         private void операторПрюиттаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new PrewittOperator();
-            applyFilter(filter);
+            applyFilter(new PrewittOperator());
         }
 
         private void светящиесяКраяToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filter filter = new LightEdgesFilter();
-            applyFilter(filter);
+            applyFilter(new LightEdgesFilter());
         }
 
         private void applyFilter(Filter filter)
@@ -237,6 +220,16 @@ namespace CG_lab1
         private void эрозияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             applyFilter(new Erosion());
+        }
+
+        private void dilationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            applyFilter(new Dilation());
+        }
+
+        private void закрытиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            applyFilter(new Closing());
         }
     }
 }

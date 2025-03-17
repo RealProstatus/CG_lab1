@@ -20,6 +20,8 @@ namespace CG_lab1.Part10
         protected override Color calculateNewPixelColor(Bitmap source, int x, int y)
         {
             List<Color> neighbours = new List<Color>();
+
+            //диапазон смещений для прямоугольного структурного элемента
             int stDx = -(kernelWidth / 2);
             int endDx = (kernelWidth % 2 == 0) ? (kernelWidth / 2 - 1) : (kernelWidth / 2);
             int stDy = -(kernelHeight / 2);
@@ -32,6 +34,8 @@ namespace CG_lab1.Part10
                     int idX = clamp(x + dx, 0, source.Width - 1);
                     int idY = clamp(y + dy, 0, source.Height - 1);
 
+
+                    // при dx = startDx получаем 0, при dx = endDx — kernelWidth - 1
                     if (kernel[dx - stDx, dy - stDx])
                         neighbours.Add(source.GetPixel(idX, idY));
                 }

@@ -105,6 +105,38 @@ namespace CG_lab1
             backgroundWorker1.CancelAsync();
         }
 
+        private void applyFilter(Filter filter)
+        {
+            if (image == null || filter == null) return;
+
+            historyStack.Push(new Bitmap(image));
+
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (historyStack.Count() > 0)
+            {
+                image = historyStack.Pop();
+                pictureBox1.Image = image;
+                pictureBox1.Refresh();
+            }
+        }
+
+        private bool[,] selectKernel()
+        {
+            KernelSelector kernelSelector = new KernelSelector();
+            if(kernelSelector.ShowDialog() == DialogResult.OK)
+            {
+                return kernelSelector.UserKernel;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         private void размытиеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             applyFilter(new BlurFilter());
@@ -189,24 +221,6 @@ namespace CG_lab1
             applyFilter(new LightEdgesFilter());
         }
 
-        private void applyFilter(Filter filter)
-        {
-            if (image == null || filter == null) return;
-
-            historyStack.Push(new Bitmap(image));
-
-            backgroundWorker1.RunWorkerAsync(filter);
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (historyStack.Count() > 0)
-            {
-                image = historyStack.Pop();
-                pictureBox1.Image = image;
-                pictureBox1.Refresh();
-            }
-        }
         private void медианныйToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             applyFilter(new MedianFilter());
@@ -219,37 +233,37 @@ namespace CG_lab1
 
         private void эрозияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            applyFilter(new Erosion());
+            applyFilter(new Erosion(selectKernel()));
         }
 
         private void dilationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            applyFilter(new Dilation());
+            applyFilter(new Dilation(selectKernel()));
         }
 
         private void закрытиеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            applyFilter(new Closing());
+            applyFilter(new Closing(selectKernel()));
         }
 
         private void открытиеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            applyFilter(new Opening());
+            applyFilter(new Opening(selectKernel()));
         }
 
         private void gradToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            applyFilter(new Grad());
+            applyFilter(new Grad(selectKernel()));
         }
 
         private void topHatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            applyFilter(new TopHat());
+            applyFilter(new TopHat(selectKernel()));
         }
 
         private void blackHatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            applyFilter(new BlackHat());
+            applyFilter(new BlackHat(selectKernel()));
         }
 
         private void серыйМирToolStripMenuItem_Click(object sender, EventArgs e)

@@ -22,11 +22,31 @@ namespace CG_lab1
         protected override Color calculateNewPixelColor(Bitmap sourceImage, int x, int y)
         {
             //применяем ядро
-            Color clr = base.calculateNewPixelColor(sourceImage, x, y);
-            //увел. яркость + нормировка
-            int res = clamp(clr.R + 100);
+            int radiusX = kernel.GetLength(0) / 2;
+            int radiusY = kernel.GetLength(1) / 2;
 
-            return Color.FromArgb(res, res, res);        
+            float resultR = 0;
+            float resultG = 0;
+            float resultB = 0;
+            for (int l = -radiusY; l <= radiusY; l++)
+            {
+                for (int k = -radiusX; k <= radiusX; k++)
+                {
+                    int idX = clamp(x + k, 0, sourceImage.Width - 1);
+                    int idY = clamp(y + l, 0, sourceImage.Height - 1);
+
+                    Color neidghbourColor = sourceImage.GetPixel(idX, idY);
+                    resultR += neidghbourColor.R * kernel[k + radiusX, l + radiusY];
+                    resultG += neidghbourColor.G * kernel[k + radiusX, l + radiusY];
+                    resultB += neidghbourColor.B * kernel[k + radiusX, l + radiusY];
+                }
+            }
+
+            resultR += 128;
+            resultG += 128;
+            resultB += 128;
+
+            return Color.FromArgb(clamp((int)resultR), clamp((int)resultG), clamp((int)resultB));
         }
     }
 }
